@@ -1,5 +1,5 @@
 //
-//  SCXVideoCapturer.h
+//  SCXCameraVideoCapturer.h
 //  SCXMediaService
 //
 //  Created by 孙承秀 on 2019/11/8.
@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SCXVideoCapturer : SCXCapture
+@interface SCXCameraVideoCapturer : SCXCapture
 @property(readonly, nonatomic) AVCaptureSession *captureSession;
 + (NSArray<AVCaptureDevice *>*)currentDevices;
 + (NSArray<AVCaptureDeviceFormat *>*)supportedFormatsForDevice:(AVCaptureDevice *)device;

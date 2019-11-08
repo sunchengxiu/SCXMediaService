@@ -1,18 +1,18 @@
 //
-//  SCXVideoCapturer.m
+//  SCXCameraVideoCapturer.m
 //  SCXMediaService
 //
 //  Created by 孙承秀 on 2019/11/8.
 //  Copyright © 2019 RongCloud. All rights reserved.
 //
 
-#import "SCXVideoCapturer.h"
+#import "SCXCameraVideoCapturer.h"
 #import "SCXDispatcher.h"
 #import <UIKit/UIKit.h>
 #import "AVCaptureSession+DevicePosition.h"
 #import "SCXCVPixelBuffer.h"
 const int64_t kNanosecondsPerSecond = 1000000000;
-@interface SCXVideoCapturer()<AVCaptureVideoDataOutputSampleBufferDelegate>{
+@interface SCXCameraVideoCapturer()<AVCaptureVideoDataOutputSampleBufferDelegate>{
     AVCaptureVideoDataOutput *_videoDataOutput;
     AVCaptureSession *_captureSession;
     FourCharCode _preferredOutputPixelFormat;
@@ -24,7 +24,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
 @property(nonatomic, strong) AVCaptureDevice *currentDevice;
 
 @end
-@implementation SCXVideoCapturer
+@implementation SCXCameraVideoCapturer
 @synthesize frameQueue = _frameQueue;
 -(instancetype)init{
     return [self initWithDelegate:nil captureSession:[[AVCaptureSession alloc] init]];

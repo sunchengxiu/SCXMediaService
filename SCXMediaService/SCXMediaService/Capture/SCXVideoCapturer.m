@@ -1,14 +1,14 @@
 //
-//  SCXCapture.m
+//  SCXVideoCapturer.m
 //  SCXMediaService
 //
 //  Created by 孙承秀 on 2019/11/7.
 //  Copyright © 2019 RongCloud. All rights reserved.
 //
 
-#import "SCXCapture.h"
+#import "SCXVideoCapturer.h"
 
-@implementation SCXCapture
+@implementation SCXVideoCapturer
 @synthesize delegate = _delegate;
 -(instancetype)initWithDelegate:(id<SCXCaptureDelegate>)delegate{
     if (self = [super init]) {

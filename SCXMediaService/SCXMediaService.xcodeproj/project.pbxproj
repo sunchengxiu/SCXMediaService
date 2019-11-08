@@ -16,7 +16,7 @@
 		E849507C2373B404002FBDB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E849507B2373B404002FBDB4 /* main.m */; };
 		E84950862373B404002FBDB4 /* SCXMediaServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950852373B404002FBDB4 /* SCXMediaServiceTests.m */; };
 		E84950912373B404002FBDB4 /* SCXMediaServiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950902373B404002FBDB4 /* SCXMediaServiceUITests.m */; };
-		E84950A42373B501002FBDB4 /* SCXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A32373B501002FBDB4 /* SCXCapture.m */; };
+		E84950A42373B501002FBDB4 /* SCXVideoCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A32373B501002FBDB4 /* SCXVideoCapturer.m */; };
 		E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A72373BEB7002FBDB4 /* SCXDispatcher.m */; };
 		E84950AB2373F72C002FBDB4 /* SCXVideoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950AA2373F72C002FBDB4 /* SCXVideoFrame.m */; };
 		E84950AF2373F7FF002FBDB4 /* SCXCVPixelBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950AE2373F7FF002FBDB4 /* SCXCVPixelBuffer.m */; };
@@ -60,8 +60,8 @@
 		E849508C2373B404002FBDB4 /* SCXMediaServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCXMediaServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84950902373B404002FBDB4 /* SCXMediaServiceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXMediaServiceUITests.m; sourceTree = "<group>"; };
 		E84950922373B404002FBDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E84950A22373B501002FBDB4 /* SCXCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCapture.h; sourceTree = "<group>"; };
-		E84950A32373B501002FBDB4 /* SCXCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCapture.m; sourceTree = "<group>"; };
+		E84950A22373B501002FBDB4 /* SCXVideoCapturer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoCapturer.h; sourceTree = "<group>"; };
+		E84950A32373B501002FBDB4 /* SCXVideoCapturer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXVideoCapturer.m; sourceTree = "<group>"; };
 		E84950A62373BEB7002FBDB4 /* SCXDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXDispatcher.h; sourceTree = "<group>"; };
 		E84950A72373BEB7002FBDB4 /* SCXDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXDispatcher.m; sourceTree = "<group>"; };
 		E84950A92373F72C002FBDB4 /* SCXVideoFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoFrame.h; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 		E849509E2373B42F002FBDB4 /* Capture */ = {
 			isa = PBXGroup;
 			children = (
-				E84950A22373B501002FBDB4 /* SCXCapture.h */,
-				E84950A32373B501002FBDB4 /* SCXCapture.m */,
+				E84950A22373B501002FBDB4 /* SCXVideoCapturer.h */,
+				E84950A32373B501002FBDB4 /* SCXVideoCapturer.m */,
 				E8DFFE172375546900CA2AAC /* SCXCameraVideoCapturer.h */,
 				E8DFFE182375546900CA2AAC /* SCXCameraVideoCapturer.m */,
 				E84950A92373F72C002FBDB4 /* SCXVideoFrame.h */,
@@ -324,7 +324,7 @@
 				E849506E2373B402002FBDB4 /* SceneDelegate.m in Sources */,
 				E8DFFE192375546900CA2AAC /* SCXCameraVideoCapturer.m in Sources */,
 				E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */,
-				E84950A42373B501002FBDB4 /* SCXCapture.m in Sources */,
+				E84950A42373B501002FBDB4 /* SCXVideoCapturer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

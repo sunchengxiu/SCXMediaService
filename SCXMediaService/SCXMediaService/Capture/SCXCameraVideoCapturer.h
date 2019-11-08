@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SCXCapture.h"
+#import "SCXVideoCapturer.h"
 #import <AVFoundation/AVFoundation.h>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SCXCameraVideoCapturer : SCXCapture
+@interface SCXCameraVideoCapturer : SCXVideoCapturer
 @property(readonly, nonatomic) AVCaptureSession *captureSession;
 + (NSArray<AVCaptureDevice *>*)currentDevices;
 + (NSArray<AVCaptureDeviceFormat *>*)supportedFormatsForDevice:(AVCaptureDevice *)device;

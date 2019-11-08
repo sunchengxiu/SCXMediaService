@@ -1,5 +1,5 @@
 //
-//  SCXCapture.h
+//  SCXVideoCapturer.h
 //  SCXMediaService
 //
 //  Created by 孙承秀 on 2019/11/7.
@@ -12,7 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 NS_ASSUME_NONNULL_BEGIN
 @protocol SCXCaptureDelegate;
-@interface SCXCapture : NSObject
+@interface SCXVideoCapturer : NSObject
 
 /**
  delegate
@@ -22,6 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 @protocol SCXCaptureDelegate <NSObject>
-- (void)capture:(SCXCapture *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame;
+- (void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame;
 @end
 NS_ASSUME_NONNULL_END

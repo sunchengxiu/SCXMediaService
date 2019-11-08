@@ -1,16 +1,18 @@
 //
-//  SCXAVCapture.m
+//  SCXVideoCapturer.m
 //  SCXMediaService
 //
-//  Created by 孙承秀 on 2019/11/7.
+//  Created by 孙承秀 on 2019/11/8.
 //  Copyright © 2019 RongCloud. All rights reserved.
 //
 
-#import "SCXAVCapture.h"
-#import "SCXCVPixelBuffer.h"
+#import "SCXVideoCapturer.h"
 #import "SCXDispatcher.h"
 #import <UIKit/UIKit.h>
-@interface SCXAVCapture()<AVCaptureVideoDataOutputSampleBufferDelegate>{
+#import "AVCaptureSession+DevicePosition.h"
+#import "SCXCVPixelBuffer.h"
+const int64_t kNanosecondsPerSecond = 1000000000;
+@interface SCXVideoCapturer()<AVCaptureVideoDataOutputSampleBufferDelegate>{
     AVCaptureVideoDataOutput *_videoDataOutput;
     AVCaptureSession *_captureSession;
     FourCharCode _preferredOutputPixelFormat;
@@ -20,8 +22,9 @@
 @property(nonatomic, readonly) dispatch_queue_t frameQueue;
 @property(nonatomic, assign) BOOL willBeRunning;
 @property(nonatomic, strong) AVCaptureDevice *currentDevice;
+
 @end
-@implementation SCXAVCapture
+@implementation SCXVideoCapturer
 @synthesize frameQueue = _frameQueue;
 -(instancetype)init{
     return [self initWithDelegate:nil captureSession:[[AVCaptureSession alloc] init]];
@@ -161,8 +164,26 @@
     return _frameQueue;
 }
 -(void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
-    if (CMSampleBufferGetNumSamples(sampleBuffer) != 1) {
-        
+    if (CMSampleBufferGetNumSamples(sampleBuffer) != 1 || !CMSampleBufferIsValid(sampleBuffer) || !CMSampleBufferDataIsReady(sampleBuffer)) {
+        return;
+    }
+    CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    if (pixelBuffer == nil) {
+        return;
+    }
+    BOOL useFrontCamera = NO;
+    AVCaptureDevicePosition position = [AVCaptureSession devicePositionForSampleBuffer:sampleBuffer];
+    if (position != AVCaptureDevicePositionUnspecified) {
+        useFrontCamera = position == AVCaptureDevicePositionFront;
+    } else {
+        AVCaptureDeviceInput *input = (AVCaptureDeviceInput *)connection.inputPorts.firstObject.input;
+        useFrontCamera = input.device.position == AVCaptureDevicePositionFront;
+    }
+    SCXCVPixelBuffer *scxPixelBuffer = [[SCXCVPixelBuffer alloc] initWithPixelBuffer:pixelBuffer];
+    int64_t timeStampNs = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer)) * kNanosecondsPerSecond;
+    SCXVideoFrame *videoFrame = [[SCXVideoFrame alloc] initWithPixelBuffer:scxPixelBuffer timeStampNs:timeStampNs];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(captureOutput:didOutputSampleBuffer:fromConnection:)]) {
+        [self.delegate capture:self didCaptureVideoFrame:videoFrame];
     }
 }
 @end

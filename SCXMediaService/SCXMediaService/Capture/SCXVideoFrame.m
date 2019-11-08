@@ -9,5 +9,19 @@
 #import "SCXVideoFrame.h"
 
 @implementation SCXVideoFrame
+@synthesize buffer = _pixelBuffer;
 
+- (instancetype)initWithPixelBuffer:(id<SCXVideoFrameBuffer>)pixelBuffer timeStampNs:(int64_t)timeStampns{
+    if (self = [super init]) {
+        _pixelBuffer = pixelBuffer;
+        _timeStampNs = timeStampns;
+    }
+    return self;
+}
+-(int)width{
+    return _pixelBuffer.width;
+}
+-(int)height{
+    return _pixelBuffer.height;
+}
 @end

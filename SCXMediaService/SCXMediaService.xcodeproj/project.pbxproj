@@ -16,11 +16,12 @@
 		E849507C2373B404002FBDB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E849507B2373B404002FBDB4 /* main.m */; };
 		E84950862373B404002FBDB4 /* SCXMediaServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950852373B404002FBDB4 /* SCXMediaServiceTests.m */; };
 		E84950912373B404002FBDB4 /* SCXMediaServiceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950902373B404002FBDB4 /* SCXMediaServiceUITests.m */; };
-		E84950A12373B4E5002FBDB4 /* SCXAVCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A02373B4E5002FBDB4 /* SCXAVCapture.m */; };
 		E84950A42373B501002FBDB4 /* SCXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A32373B501002FBDB4 /* SCXCapture.m */; };
 		E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950A72373BEB7002FBDB4 /* SCXDispatcher.m */; };
 		E84950AB2373F72C002FBDB4 /* SCXVideoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950AA2373F72C002FBDB4 /* SCXVideoFrame.m */; };
 		E84950AF2373F7FF002FBDB4 /* SCXCVPixelBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950AE2373F7FF002FBDB4 /* SCXCVPixelBuffer.m */; };
+		E8DFFE132375161A00CA2AAC /* AVCaptureSession+DevicePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */; };
+		E8DFFE192375546900CA2AAC /* SCXVideoCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE182375546900CA2AAC /* SCXVideoCapturer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +60,6 @@
 		E849508C2373B404002FBDB4 /* SCXMediaServiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCXMediaServiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84950902373B404002FBDB4 /* SCXMediaServiceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXMediaServiceUITests.m; sourceTree = "<group>"; };
 		E84950922373B404002FBDB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E849509F2373B4E5002FBDB4 /* SCXAVCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXAVCapture.h; sourceTree = "<group>"; };
-		E84950A02373B4E5002FBDB4 /* SCXAVCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXAVCapture.m; sourceTree = "<group>"; };
 		E84950A22373B501002FBDB4 /* SCXCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCapture.h; sourceTree = "<group>"; };
 		E84950A32373B501002FBDB4 /* SCXCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCapture.m; sourceTree = "<group>"; };
 		E84950A62373BEB7002FBDB4 /* SCXDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXDispatcher.h; sourceTree = "<group>"; };
@@ -70,6 +69,10 @@
 		E84950AC2373F7C7002FBDB4 /* SCXVideoFrameBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoFrameBuffer.h; sourceTree = "<group>"; };
 		E84950AD2373F7FF002FBDB4 /* SCXCVPixelBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCVPixelBuffer.h; sourceTree = "<group>"; };
 		E84950AE2373F7FF002FBDB4 /* SCXCVPixelBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCVPixelBuffer.m; sourceTree = "<group>"; };
+		E8DFFE112375161A00CA2AAC /* AVCaptureSession+DevicePosition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVCaptureSession+DevicePosition.h"; sourceTree = "<group>"; };
+		E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AVCaptureSession+DevicePosition.m"; sourceTree = "<group>"; };
+		E8DFFE172375546900CA2AAC /* SCXVideoCapturer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoCapturer.h; sourceTree = "<group>"; };
+		E8DFFE182375546900CA2AAC /* SCXVideoCapturer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXVideoCapturer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,13 +163,15 @@
 			children = (
 				E84950A22373B501002FBDB4 /* SCXCapture.h */,
 				E84950A32373B501002FBDB4 /* SCXCapture.m */,
-				E849509F2373B4E5002FBDB4 /* SCXAVCapture.h */,
-				E84950A02373B4E5002FBDB4 /* SCXAVCapture.m */,
+				E8DFFE172375546900CA2AAC /* SCXVideoCapturer.h */,
+				E8DFFE182375546900CA2AAC /* SCXVideoCapturer.m */,
 				E84950A92373F72C002FBDB4 /* SCXVideoFrame.h */,
 				E84950AA2373F72C002FBDB4 /* SCXVideoFrame.m */,
 				E84950AD2373F7FF002FBDB4 /* SCXCVPixelBuffer.h */,
 				E84950AE2373F7FF002FBDB4 /* SCXCVPixelBuffer.m */,
 				E84950AC2373F7C7002FBDB4 /* SCXVideoFrameBuffer.h */,
+				E8DFFE112375161A00CA2AAC /* AVCaptureSession+DevicePosition.h */,
+				E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -313,10 +318,11 @@
 				E84950AF2373F7FF002FBDB4 /* SCXCVPixelBuffer.m in Sources */,
 				E84950712373B402002FBDB4 /* ViewController.m in Sources */,
 				E849506B2373B401002FBDB4 /* AppDelegate.m in Sources */,
+				E8DFFE132375161A00CA2AAC /* AVCaptureSession+DevicePosition.m in Sources */,
 				E84950AB2373F72C002FBDB4 /* SCXVideoFrame.m in Sources */,
-				E84950A12373B4E5002FBDB4 /* SCXAVCapture.m in Sources */,
 				E849507C2373B404002FBDB4 /* main.m in Sources */,
 				E849506E2373B402002FBDB4 /* SceneDelegate.m in Sources */,
+				E8DFFE192375546900CA2AAC /* SCXVideoCapturer.m in Sources */,
 				E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */,
 				E84950A42373B501002FBDB4 /* SCXCapture.m in Sources */,
 			);

@@ -73,6 +73,18 @@
         }
     }];
 }
+- (void)stopCaptureWithCompletionHandler:(nullable void (^)(void))completionHandler{
+    [SCXDispatcher dispatchAsyncOnType:SCXDispatcherQueueTypeCaptureSession block:^{
+        self.currentDevice = nil;
+        for (AVCaptureDeviceInput *oldInput in [self.captureSession inputs]) {
+            [self.captureSession removeInput:oldInput];
+        }
+        [self.captureSession stopRunning];
+        if (completionHandler) {
+            completionHandler();
+        }
+    }];
+}
 - (void)updateOrientation{
     NSAssert([SCXDispatcher isOnQueueForType:SCXDispatcherQueueTypeCaptureSession], @"updateOrientation must be on capturesession");
     _orientation = [UIDevice currentDevice].orientation;
@@ -148,5 +160,9 @@
     }
     return _frameQueue;
 }
-
+-(void)captureOutput:(AVCaptureOutput *)output didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection{
+    if (CMSampleBufferGetNumSamples(sampleBuffer) != 1) {
+        
+    }
+}
 @end

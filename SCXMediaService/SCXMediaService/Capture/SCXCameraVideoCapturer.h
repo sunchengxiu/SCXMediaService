@@ -13,9 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SCXCameraVideoCapturer : SCXVideoCapturer
 @property(readonly, nonatomic) AVCaptureSession *captureSession;
-+ (NSArray<AVCaptureDevice *>*)currentDevices;
 + (NSArray<AVCaptureDeviceFormat *>*)supportedFormatsForDevice:(AVCaptureDevice *)device;
 - (FourCharCode)preferredOutputPixelFormat;
++ (NSArray<AVCaptureDevice *> *)captureDevices;
+- (void)startCaptureWithDevice:(AVCaptureDevice *)device format:(AVCaptureDeviceFormat *)format fps:(NSInteger)fps completionHandler:(nullable void (^)(NSError *))completionHandler;
+- (void)stopCapture;
 @end
 
 NS_ASSUME_NONNULL_END

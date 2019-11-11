@@ -22,6 +22,8 @@
 		E84950AF2373F7FF002FBDB4 /* SCXCVPixelBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = E84950AE2373F7FF002FBDB4 /* SCXCVPixelBuffer.m */; };
 		E8DFFE132375161A00CA2AAC /* AVCaptureSession+DevicePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */; };
 		E8DFFE192375546900CA2AAC /* SCXCameraVideoCapturer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE182375546900CA2AAC /* SCXCameraVideoCapturer.m */; };
+		E8DFFE1C2375591500CA2AAC /* SCXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE1B2375591500CA2AAC /* SCXCapture.m */; };
+		E8F1CE492375645C00DDD1FA /* SCXCaptureConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AVCaptureSession+DevicePosition.m"; sourceTree = "<group>"; };
 		E8DFFE172375546900CA2AAC /* SCXCameraVideoCapturer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCameraVideoCapturer.h; sourceTree = "<group>"; };
 		E8DFFE182375546900CA2AAC /* SCXCameraVideoCapturer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCameraVideoCapturer.m; sourceTree = "<group>"; };
+		E8DFFE1A2375591500CA2AAC /* SCXCapture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCapture.h; sourceTree = "<group>"; };
+		E8DFFE1B2375591500CA2AAC /* SCXCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCapture.m; sourceTree = "<group>"; };
+		E8F1CE472375645C00DDD1FA /* SCXCaptureConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCaptureConfig.h; sourceTree = "<group>"; };
+		E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCaptureConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,10 @@
 				E84950AC2373F7C7002FBDB4 /* SCXVideoFrameBuffer.h */,
 				E8DFFE112375161A00CA2AAC /* AVCaptureSession+DevicePosition.h */,
 				E8DFFE122375161A00CA2AAC /* AVCaptureSession+DevicePosition.m */,
+				E8DFFE1A2375591500CA2AAC /* SCXCapture.h */,
+				E8DFFE1B2375591500CA2AAC /* SCXCapture.m */,
+				E8F1CE472375645C00DDD1FA /* SCXCaptureConfig.h */,
+				E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */,
 			);
 			path = Capture;
 			sourceTree = "<group>";
@@ -316,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84950AF2373F7FF002FBDB4 /* SCXCVPixelBuffer.m in Sources */,
+				E8F1CE492375645C00DDD1FA /* SCXCaptureConfig.m in Sources */,
 				E84950712373B402002FBDB4 /* ViewController.m in Sources */,
 				E849506B2373B401002FBDB4 /* AppDelegate.m in Sources */,
 				E8DFFE132375161A00CA2AAC /* AVCaptureSession+DevicePosition.m in Sources */,
@@ -325,6 +336,7 @@
 				E8DFFE192375546900CA2AAC /* SCXCameraVideoCapturer.m in Sources */,
 				E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */,
 				E84950A42373B501002FBDB4 /* SCXVideoCapturer.m in Sources */,
+				E8DFFE1C2375591500CA2AAC /* SCXCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,9 +39,9 @@ const int64_t kNanosecondsPerSecond = 1000000000;
         }
         
     }
-    return nil;
+    return self;
 }
-+(NSArray<AVCaptureDevice *> *)currentDevices{
++(NSArray<AVCaptureDevice *> *)captureDevices{
     if (@available(iOS 10.0, *)) {
         AVCaptureDeviceDiscoverySession*session = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[ AVCaptureDeviceTypeBuiltInWideAngleCamera ] mediaType:AVMediaTypeVideo position:AVCaptureDevicePositionUnspecified];
         return session.devices;
@@ -75,6 +75,9 @@ const int64_t kNanosecondsPerSecond = 1000000000;
             completionHandler(nil);
         }
     }];
+}
+- (void)stopCapture{
+    [self stopCaptureWithCompletionHandler:nil];
 }
 - (void)stopCaptureWithCompletionHandler:(nullable void (^)(void))completionHandler{
     [SCXDispatcher dispatchAsyncOnType:SCXDispatcherQueueTypeCaptureSession block:^{

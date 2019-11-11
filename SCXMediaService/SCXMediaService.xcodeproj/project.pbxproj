@@ -25,6 +25,7 @@
 		E8DFFE1C2375591500CA2AAC /* SCXCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DFFE1B2375591500CA2AAC /* SCXCapture.m */; };
 		E8F1CE492375645C00DDD1FA /* SCXCaptureConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */; };
 		E8F1CE4E2379477D00DDD1FA /* SCXCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */; };
+		E8F1CE51237957B700DDD1FA /* SCXCameraVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,8 @@
 		E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCaptureConfig.m; sourceTree = "<group>"; };
 		E8F1CE4C2379477D00DDD1FA /* SCXCameraPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCameraPreviewView.h; sourceTree = "<group>"; };
 		E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCameraPreviewView.m; sourceTree = "<group>"; };
+		E8F1CE4F237957B700DDD1FA /* SCXCameraVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCameraVideoView.h; sourceTree = "<group>"; };
+		E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCameraVideoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 			children = (
 				E8F1CE4C2379477D00DDD1FA /* SCXCameraPreviewView.h */,
 				E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */,
+				E8F1CE4F237957B700DDD1FA /* SCXCameraVideoView.h */,
+				E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				E849507C2373B404002FBDB4 /* main.m in Sources */,
 				E849506E2373B402002FBDB4 /* SceneDelegate.m in Sources */,
 				E8DFFE192375546900CA2AAC /* SCXCameraVideoCapturer.m in Sources */,
+				E8F1CE51237957B700DDD1FA /* SCXCameraVideoView.m in Sources */,
 				E84950A82373BEB7002FBDB4 /* SCXDispatcher.m in Sources */,
 				E84950A42373B501002FBDB4 /* SCXVideoCapturer.m in Sources */,
 				E8DFFE1C2375591500CA2AAC /* SCXCapture.m in Sources */,

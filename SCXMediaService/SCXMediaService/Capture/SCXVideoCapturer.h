@@ -10,18 +10,17 @@
 #import "SCXVideoFrame.h"
 #import <VideoToolbox/VideoToolbox.h>
 #import <AVFoundation/AVFoundation.h>
+#import "SCXVideoCaptureDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
-@protocol SCXCaptureDelegate;
+
 @interface SCXVideoCapturer : NSObject
 
 /**
  delegate
  */
-@property(nonatomic , weak)id<SCXCaptureDelegate> delegate;
-- (instancetype)initWithDelegate:(id<SCXCaptureDelegate>)delegate;
+@property(nonatomic , weak)id<SCXVideoCaptureDelegate> delegate;
+- (instancetype)initWithDelegate:(id<SCXVideoCaptureDelegate>)delegate;
 
 @end
-@protocol SCXCaptureDelegate <NSObject>
-- (void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame;
-@end
+
 NS_ASSUME_NONNULL_END

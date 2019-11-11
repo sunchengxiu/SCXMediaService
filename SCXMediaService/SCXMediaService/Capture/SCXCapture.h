@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SCXCaptureConfig.h"
+#import "SCXVideoCaptureDelegate.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SCXCapture : NSObject
 @property(nonatomic , strong , readonly)SCXCaptureConfig *config;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype) new NS_UNAVAILABLE;
-- (instancetype)initWithConfig:(SCXCaptureConfig *)config;
+- (instancetype)initWithConfig:(SCXCaptureConfig *)config delegate:(id<SCXVideoCaptureDelegate>)delegate;
 - (void)startCapture;
 - (void)stopCapture;
 - (void)switchCamera;

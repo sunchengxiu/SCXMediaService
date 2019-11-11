@@ -26,6 +26,7 @@
 		E8F1CE492375645C00DDD1FA /* SCXCaptureConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE482375645C00DDD1FA /* SCXCaptureConfig.m */; };
 		E8F1CE4E2379477D00DDD1FA /* SCXCameraPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */; };
 		E8F1CE51237957B700DDD1FA /* SCXCameraVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */; };
+		E8F1CE5423795AD000DDD1FA /* SCXVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F1CE5323795AD000DDD1FA /* SCXVideoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,9 @@
 		E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCameraPreviewView.m; sourceTree = "<group>"; };
 		E8F1CE4F237957B700DDD1FA /* SCXCameraVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXCameraVideoView.h; sourceTree = "<group>"; };
 		E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXCameraVideoView.m; sourceTree = "<group>"; };
+		E8F1CE5223795AD000DDD1FA /* SCXVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoViewController.h; sourceTree = "<group>"; };
+		E8F1CE5323795AD000DDD1FA /* SCXVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCXVideoViewController.m; sourceTree = "<group>"; };
+		E8F1CE55237960E200DDD1FA /* SCXVideoCaptureDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCXVideoCaptureDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,7 @@
 			children = (
 				E84950A22373B501002FBDB4 /* SCXVideoCapturer.h */,
 				E84950A32373B501002FBDB4 /* SCXVideoCapturer.m */,
+				E8F1CE55237960E200DDD1FA /* SCXVideoCaptureDelegate.h */,
 				E8DFFE172375546900CA2AAC /* SCXCameraVideoCapturer.h */,
 				E8DFFE182375546900CA2AAC /* SCXCameraVideoCapturer.m */,
 				E84950A92373F72C002FBDB4 /* SCXVideoFrame.h */,
@@ -209,6 +214,8 @@
 				E8F1CE4D2379477D00DDD1FA /* SCXCameraPreviewView.m */,
 				E8F1CE4F237957B700DDD1FA /* SCXCameraVideoView.h */,
 				E8F1CE50237957B700DDD1FA /* SCXCameraVideoView.m */,
+				E8F1CE5223795AD000DDD1FA /* SCXVideoViewController.h */,
+				E8F1CE5323795AD000DDD1FA /* SCXVideoViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 				E8F1CE4E2379477D00DDD1FA /* SCXCameraPreviewView.m in Sources */,
 				E84950712373B402002FBDB4 /* ViewController.m in Sources */,
 				E849506B2373B401002FBDB4 /* AppDelegate.m in Sources */,
+				E8F1CE5423795AD000DDD1FA /* SCXVideoViewController.m in Sources */,
 				E8DFFE132375161A00CA2AAC /* AVCaptureSession+DevicePosition.m in Sources */,
 				E84950AB2373F72C002FBDB4 /* SCXVideoFrame.m in Sources */,
 				E849507C2373B404002FBDB4 /* main.m in Sources */,

@@ -10,7 +10,7 @@
 
 @implementation SCXVideoCapturer
 @synthesize delegate = _delegate;
--(instancetype)initWithDelegate:(id<SCXCaptureDelegate>)delegate{
+-(instancetype)initWithDelegate:(id<SCXVideoCaptureDelegate>)delegate{
     if (self = [super init]) {
         _delegate = delegate;
     }

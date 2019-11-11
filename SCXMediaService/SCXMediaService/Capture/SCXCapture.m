@@ -8,7 +8,7 @@
 
 #import "SCXCapture.h"
 #import "SCXCameraVideoCapturer.h"
-@interface SCXCapture()<SCXCaptureDelegate>
+@interface SCXCapture()<SCXVideoCaptureDelegate>
 
 /**
  video capture
@@ -98,8 +98,5 @@
     NSLog(@"width : %@,height:%@",@(size.width),@(size.height));
     return size;
 }
-#pragma mark - delegate
--(void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame{
-    
-}
+
 @end

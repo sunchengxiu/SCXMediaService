@@ -157,7 +157,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
     output.videoSettings = @{(NSString *)kCVPixelBufferPixelFormatTypeKey:pixelFormat};
     output.alwaysDiscardsLateVideoFrames = NO;
     [output setSampleBufferDelegate:self queue:self.frameQueue];
-    output = output;
+    _videoDataOutput = output;
 }
 -(dispatch_queue_t)frameQueue{
     if (!_frameQueue) {

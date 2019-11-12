@@ -26,7 +26,7 @@ static
     dispatch_queue_t targetQueue = [self dispatchQueueForType:type];
     const char *tarLabel = dispatch_queue_get_label(targetQueue);
     const char *curLabel = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL);
-    return strcmp(tarLabel, curLabel);
+    return strcmp(tarLabel, curLabel) == 0;
     
 }
 + (dispatch_queue_t)dispatchQueueForType:(SCXDispatcherQueueType)type{
@@ -36,6 +36,7 @@ static
             break;
             case SCXDispatcherQueueTypeAudioSession:
             return KAudioSessionQueue;
+            break;
             case SCXDispatcherQueueTypeCaptureSession:
             return KCaptureSessionQueue;
             

@@ -9,6 +9,7 @@
 #import "SCXVideoViewController.h"
 #import "SCXCameraVideoView.h"
 #import "SCXCapture.h"
+#import "SCXVideoFrame.h"
 @interface SCXVideoViewController ()<SCXVideoCaptureDelegate>
 
 /**
@@ -20,6 +21,11 @@
  capture
  */
 @property(nonatomic , strong)SCXCapture *capture;
+
+/**
+ session
+ */
+@property(nonatomic , strong)AVCaptureSession *session;
 @end
 
 @implementation SCXVideoViewController
@@ -32,6 +38,7 @@
     SCXCaptureConfig *config = [SCXCaptureConfig defaultConfig];
     _capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
     AVCaptureSession *session = _capture.captureSession;
+    _session = session;
     _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
     _videoView.localView.captureSession = session;
     [_capture startCapture];
@@ -46,6 +53,6 @@
 }
 #pragma mark - delegate
 -(void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame{
-    
+    NSLog(@"fram width:%@,frame height : %@",@(frame.width),@(frame.height));
 }
 @end

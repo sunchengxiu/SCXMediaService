@@ -30,6 +30,7 @@
     if (_captureSession == captureSession) {
         return;
     }
+    _captureSession = captureSession;
     [SCXDispatcher dispatchAsyncOnType:SCXDispatcherQueueTypeMain block:^{
         AVCaptureVideoPreviewLayer *layer = [self  previewLayer];
         [SCXDispatcher dispatchAsyncOnType:SCXDispatcherQueueTypeCaptureSession block:^{

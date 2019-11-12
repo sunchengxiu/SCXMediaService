@@ -12,15 +12,11 @@
 @synthesize localView = _localView;
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        _localView = [[SCXCameraPreviewView alloc] initWithFrame:CGRectZero];
+        _localView = [[SCXCameraPreviewView alloc] initWithFrame:frame];
         self.backgroundColor = [UIColor redColor];
         [self addSubview:_localView];
     }
     return self;
-}
--(void)layoutSubviews{
-    [super layoutSubviews];
-    _localView.frame = [UIScreen mainScreen].bounds;
 }
 
 @end

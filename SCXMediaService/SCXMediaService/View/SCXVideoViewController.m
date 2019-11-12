@@ -39,15 +39,12 @@
     _capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
     AVCaptureSession *session = _capture.captureSession;
     _session = session;
-    _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
+    _videoView = [[SCXCameraVideoView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _videoView.localView.captureSession = session;
+     self.view = _videoView;
     [_capture startCapture];
 }
 
--(void)loadView{
-    _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
-    self.view = _videoView;
-}
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskAll;
 }

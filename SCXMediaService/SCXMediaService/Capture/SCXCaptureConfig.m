@@ -15,7 +15,7 @@
 -(instancetype)init{
     if (self = [super init]) {
         self.preset = SCXCaptureSessionPreset640x480;
-        self.position = SCXCaptureDevicePositionFront;
+        self.position = SCXCaptureDevicePositionBack;
         self.fps = SCXVideoFPS24;
     }
     return self;

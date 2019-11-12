@@ -185,7 +185,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
     SCXCVPixelBuffer *scxPixelBuffer = [[SCXCVPixelBuffer alloc] initWithPixelBuffer:pixelBuffer];
     int64_t timeStampNs = CMTimeGetSeconds(CMSampleBufferGetPresentationTimeStamp(sampleBuffer)) * kNanosecondsPerSecond;
     SCXVideoFrame *videoFrame = [[SCXVideoFrame alloc] initWithPixelBuffer:scxPixelBuffer timeStampNs:timeStampNs];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(captureOutput:didOutputSampleBuffer:fromConnection:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(capture:didCaptureVideoFrame:)]) {
         [self.delegate capture:self didCaptureVideoFrame:videoFrame];
     }
 }

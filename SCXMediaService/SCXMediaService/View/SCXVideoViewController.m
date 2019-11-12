@@ -15,6 +15,11 @@
  video view
  */
 @property(nonatomic , strong)SCXCameraVideoView *videoView;
+
+/**
+ capture
+ */
+@property(nonatomic , strong)SCXCapture *capture;
 @end
 
 @implementation SCXVideoViewController
@@ -25,11 +30,11 @@
 }
 - (void)startCapture{
     SCXCaptureConfig *config = [SCXCaptureConfig defaultConfig];
-    SCXCapture *capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
-    AVCaptureSession *session = capture.captureSession;
+    _capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
+    AVCaptureSession *session = _capture.captureSession;
     _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
     _videoView.localView.captureSession = session;
-    [capture startCapture];
+    [_capture startCapture];
 }
 
 -(void)loadView{

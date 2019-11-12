@@ -13,6 +13,7 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         _localView = [[SCXCameraPreviewView alloc] initWithFrame:CGRectZero];
+        self.backgroundColor = [UIColor redColor];
         [self addSubview:_localView];
     }
     return self;

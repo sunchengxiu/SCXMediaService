@@ -13,6 +13,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SCXCapture : NSObject
+@property(readonly, nonatomic) AVCaptureSession *captureSession;
 @property(nonatomic , strong , readonly)SCXCaptureConfig *config;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype) new NS_UNAVAILABLE;

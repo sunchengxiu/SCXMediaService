@@ -8,7 +8,8 @@
 
 #import "SCXVideoViewController.h"
 #import "SCXCameraVideoView.h"
-@interface SCXVideoViewController ()
+#import "SCXCapture.h"
+@interface SCXVideoViewController ()<SCXVideoCaptureDelegate>
 
 /**
  video view
@@ -20,16 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createVideoViewAndSession];
+    [self startCapture];
 }
-- (void)createVideoViewAndSession{
-    
+- (void)startCapture{
+    SCXCaptureConfig *config = [SCXCaptureConfig defaultConfig];
+    SCXCapture *capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
+    AVCaptureSession *session = capture.captureSession;
+    _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
+    _videoView.localView.captureSession = session;
+    [capture startCapture];
 }
+
 -(void)loadView{
     _videoView = [[SCXCameraVideoView alloc] initWithFrame:CGRectZero];
     self.view = _videoView;
 }
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskAll;
+}
+#pragma mark - delegate
+-(void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame{
+    
 }
 @end

@@ -17,10 +17,10 @@
 @end
 @implementation SCXCapture
 @synthesize config = _config;
--(instancetype)initWithConfig:(SCXCaptureConfig *)config{
+-(instancetype)initWithConfig:(SCXCaptureConfig *)config delegate:(nonnull id<SCXVideoCaptureDelegate>)delegate{
     NSAssert(config != nil, @"config cant nil");
     if (self = [super init]) {
-        _capture = [[SCXCameraVideoCapturer alloc] initWithDelegate:self];
+        _capture = [[SCXCameraVideoCapturer alloc] initWithDelegate:delegate];
         _config = config;
     }
     return self;
@@ -46,6 +46,9 @@
 - (void)switchCamera{
     _config.position = !_config.position;
     [self startCapture];
+}
+-(AVCaptureSession *)captureSession{
+    return _capture.captureSession;
 }
 - (AVCaptureDevice *)findDeviceForPosition:(AVCaptureDevicePosition)position{
     NSArray<AVCaptureDevice *>*devices = [SCXCameraVideoCapturer captureDevices];

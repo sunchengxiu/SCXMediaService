@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  capture session
  */
-@property(nonatomic , strong)AVCaptureSession *captureSession;
+@property(nonatomic , strong)AVCaptureSession * _Nullable captureSession;
 @end
 
 NS_ASSUME_NONNULL_END

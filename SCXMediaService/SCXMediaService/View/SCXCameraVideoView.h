@@ -9,13 +9,23 @@
 #import <UIKit/UIKit.h>
 #import "SCXCameraPreviewView.h"
 NS_ASSUME_NONNULL_BEGIN
-
+@protocol SCXCameraVideoViewDelegate;
 @interface SCXCameraVideoView : UIView
 
 /**
  preview view
  */
 @property(nonatomic , strong , readonly)SCXCameraPreviewView *localView;
-@end
 
+/**
+ delegate
+ */
+@property(nonatomic , weak)id <SCXCameraVideoViewDelegate> delegate;
+
+@end
+@protocol SCXCameraVideoViewDelegate <NSObject>
+
+- (void)videoViewDidHangup:(SCXCameraVideoView *)videoView;
+
+@end
 NS_ASSUME_NONNULL_END

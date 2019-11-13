@@ -10,7 +10,7 @@
 #import "SCXCameraVideoView.h"
 #import "SCXCapture.h"
 #import "SCXVideoFrame.h"
-@interface SCXVideoViewController ()<SCXVideoCaptureDelegate>
+@interface SCXVideoViewController ()<SCXVideoCaptureDelegate,SCXCameraVideoViewDelegate>
 
 /**
  video view
@@ -41,14 +41,24 @@
     _session = session;
     _videoView = [[SCXCameraVideoView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _videoView.localView.captureSession = session;
+    _videoView.delegate = self;
      self.view = _videoView;
     [_capture startCapture];
 }
-
+- (void)stopCapture{
+    _videoView.localView.captureSession = nil;
+    [_capture stopCapture];
+    _capture = nil;
+    _session = nil;
+}
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskAll;
 }
-#pragma mark - delegate
+#pragma mark - video view delegate
+-(void)videoViewDidHangup:(SCXCameraVideoView *)videoView{
+    [self stopCapture];
+}
+#pragma mark - capture delegate
 -(void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame{
     NSLog(@"fram width:%@,frame height : %@",@(frame.width),@(frame.height));
 }

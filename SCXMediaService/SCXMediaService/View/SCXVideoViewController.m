@@ -32,17 +32,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _videoView = [[SCXCameraVideoView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.view = _videoView;
     [self startCapture];
 }
 - (void)startCapture{
+    if (_capture && _capture.isRunning) {
+        return;
+    }
     SCXCaptureConfig *config = [SCXCaptureConfig defaultConfig];
     _capture = [[SCXCapture alloc] initWithConfig:config delegate:self];
     AVCaptureSession *session = _capture.captureSession;
     _session = session;
-    _videoView = [[SCXCameraVideoView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _videoView.localView.captureSession = session;
     _videoView.delegate = self;
-     self.view = _videoView;
     [_capture startCapture];
 }
 - (void)stopCapture{
@@ -57,6 +60,9 @@
 #pragma mark - video view delegate
 -(void)videoViewDidHangup:(SCXCameraVideoView *)videoView{
     [self stopCapture];
+}
+-(void)videoViewDidStart:(SCXCameraVideoView *)videoView{
+    [self startCapture];
 }
 #pragma mark - capture delegate
 -(void)capture:(SCXVideoCapturer *)capture didCaptureVideoFrame:(SCXVideoFrame *)frame{

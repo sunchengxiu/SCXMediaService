@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol SCXCameraVideoViewDelegate <NSObject>
 
 - (void)videoViewDidHangup:(SCXCameraVideoView *)videoView;
+- (void)videoViewDidStart:(SCXCameraVideoView *)videoView;
 
 @end
 NS_ASSUME_NONNULL_END

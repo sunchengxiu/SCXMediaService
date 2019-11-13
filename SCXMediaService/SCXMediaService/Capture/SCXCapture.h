@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype) new NS_UNAVAILABLE;
 - (instancetype)initWithConfig:(SCXCaptureConfig *)config delegate:(id<SCXVideoCaptureDelegate>)delegate;
+@property(nonatomic , assign , readonly)BOOL isRunning;
 - (void)startCapture;
 - (void)stopCapture;
 - (void)switchCamera;

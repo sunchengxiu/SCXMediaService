@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray<AVCaptureDeviceFormat *>*)supportedFormatsForDevice:(AVCaptureDevice *)device;
 - (FourCharCode)preferredOutputPixelFormat;
 + (NSArray<AVCaptureDevice *> *)captureDevices;
+@property(nonatomic , assign , readonly)BOOL isRunning;
 - (void)startCaptureWithDevice:(AVCaptureDevice *)device format:(AVCaptureDeviceFormat *)format fps:(NSInteger)fps completionHandler:(nullable void (^)(NSError *))completionHandler;
 - (void)stopCapture;
 @end

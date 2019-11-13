@@ -29,6 +29,10 @@
     return _config;
 }
 -(void)startCapture{
+    if (self.isRunning) {
+        NSLog(@"capture is running");
+        return;
+    }
     AVCaptureDevicePosition position = _config.position == SCXCaptureDevicePositionFront ? AVCaptureDevicePositionFront : AVCaptureDevicePositionBack;
     AVCaptureDevice *device = [self findDeviceForPosition:position];
     AVCaptureDeviceFormat *format = [self selectFormatForDevice:device];
@@ -40,6 +44,12 @@
     [_capture startCaptureWithDevice:device format:format fps:fps completionHandler:^(NSError * _Nonnull error) {
         
     }];
+}
+-(BOOL)isRunning{
+    if (_capture && _capture.isRunning) {
+        return YES;
+    }
+    return NO;
 }
 -(void)stopCapture{
     [_capture stopCapture];

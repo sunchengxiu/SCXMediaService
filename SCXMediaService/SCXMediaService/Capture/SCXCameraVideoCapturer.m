@@ -25,6 +25,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
 
 @end
 @implementation SCXCameraVideoCapturer
+@synthesize isRunning = _isRunning;
 @synthesize frameQueue = _frameQueue;
 -(instancetype)init{
     return [self initWithDelegate:nil captureSession:[[AVCaptureSession alloc] init]];
@@ -56,6 +57,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
     return _preferredOutputPixelFormat;
 }
 - (void)startCaptureWithDevice:(AVCaptureDevice *)device format:(AVCaptureDeviceFormat *)format fps:(NSInteger)fps completionHandler:(nullable void (^)(NSError *))completionHandler{
+    _isRunning = YES;
     [SCXDispatcher dispatchAsyncOnType:SCXDispatcherQueueTypeCaptureSession block:^{
         self.currentDevice = device;
         NSError *error = nil;
@@ -63,6 +65,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
             if (completionHandler) {
                 completionHandler(error);
             }
+            self->_isRunning = NO;
             return ;
         }
         [self reconfigCaptureSessionInput];
@@ -77,6 +80,7 @@ const int64_t kNanosecondsPerSecond = 1000000000;
     }];
 }
 - (void)stopCapture{
+    _isRunning = NO;
     [self stopCaptureWithCompletionHandler:nil];
 }
 - (void)stopCaptureWithCompletionHandler:(nullable void (^)(void))completionHandler{

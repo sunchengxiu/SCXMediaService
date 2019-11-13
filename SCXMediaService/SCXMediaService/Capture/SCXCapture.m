@@ -36,7 +36,8 @@
         NSAssert(NO, @"no select format");
         return;
     }
-    [_capture startCaptureWithDevice:device format:format fps:_config.fps completionHandler:^(NSError * _Nonnull error) {
+    NSUInteger fps = [self fps:_config.fps];
+    [_capture startCaptureWithDevice:device format:format fps:fps completionHandler:^(NSError * _Nonnull error) {
         
     }];
 }
@@ -76,6 +77,22 @@
         }
     }
     return selectFormat;
+}
+- (NSUInteger)fps:(SCXVideoFPS)fps{
+    switch (fps) {
+        case SCXVideoFPS15:
+            return 15;
+            break;
+            case SCXVideoFPS24:
+            return 24;
+            break;
+            case SCXVideoFPS30:
+            return 30;
+            break;
+        default:
+            return 30;
+            break;
+    }
 }
 - (CGSize)resolutionForCaptureSessionPreset:(SCXCaptureSessionPreset)preset{
     CGSize size = CGSizeZero;
